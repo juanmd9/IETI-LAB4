@@ -20,8 +20,6 @@ import Person from '@material-ui/icons/Person';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import PropTypes from 'prop-types';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 
 const drawerWidth = 240;
 
@@ -181,9 +179,7 @@ export default function PersistentDrawerLeft({ prueba }) {
         >
           <div className={classes.drawerHeader} />
           {prueba()}
-          <Fab color="primary" aria-label="add" className={classes.fab}>
-            <AddIcon />
-          </Fab>
+          
         </main>
       </ThemeProvider>
     </div>

@@ -1,6 +1,6 @@
 # Task Planner App
 
-[Heroku Task Planner App](https://lab3-taskplanner.herokuapp.com/todo)
+[Heroku Task Planner App](https://lab4-taskplanner.herokuapp.com)
 
 
-[Azure Task Planner App](https://lab3-taskplanner.azurewebsites.net/todo)
+[Azure Task Planner App](https://lab4-taskplanner.azurewebsites.net)

@@ -3,7 +3,6 @@ import { useState } from 'react';
 export default function useIsLoggedIn() {
     const getIsLoggedIn = () => {
         const isLogged = JSON.parse(localStorage.getItem("isLoggedIn"));
-        console.log( isLogged, "####", isLogged?.item);
         return isLogged;
     };
     const [isLoggedIn, setIsLoggedIn] = useState(getIsLoggedIn());
