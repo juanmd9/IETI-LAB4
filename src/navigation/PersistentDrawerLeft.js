@@ -20,6 +20,8 @@ import Person from '@material-ui/icons/Person';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import PropTypes from 'prop-types';
+import { useHistory } from "react-router-dom";
+import ListIcon from '@material-ui/icons/List';
 
 const drawerWidth = 240;
 
@@ -87,7 +89,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft({ prueba }) {
   const classes = useStyles();
-  // const theme = useTheme();
+  const history = useHistory();
+  console.log(!history, "#");
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const theme = React.useMemo(
     () =>
@@ -148,11 +151,17 @@ export default function PersistentDrawerLeft({ prueba }) {
             </IconButton>
           </div>
           <List>
-            <ListItem button key='Profile'>
+            <ListItem button key='Profile' onClick={() => history.push("/profile")}>
               <ListItemIcon>
                 <Person />
               </ListItemIcon>
               <ListItemText primary='Profile' />
+            </ListItem>
+            <ListItem button key='Todo' onClick={() => history.push("/todo")}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary='Todo' />
             </ListItem>
             <ListItem button key='Logout' onClick={out}>
               <ListItemIcon>

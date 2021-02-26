@@ -3,8 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -15,6 +13,8 @@ import Container from '@material-ui/core/Container';
 import Copyright from '../Copyright';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,8 +36,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function Profile() {
   const classes = useStyles();
+  const h = useHistory();
+  console.log(!h)
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const theme = React.useMemo(
     () =>
@@ -54,14 +56,11 @@ export default function SignUp() {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h3">
-            Task Planner
+            Profile
         </Typography>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <AccountCircleIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -119,15 +118,15 @@ export default function SignUp() {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Save
           </Button>
-          <Grid container justify="flex-end">
+          {/* <Grid container justify="flex-end">
             <Grid item>
               <Link href="/" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
-          </Grid>
+          </Grid> */}
         </form>
       </div>
       </ThemeProvider>
