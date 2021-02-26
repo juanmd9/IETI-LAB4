@@ -22,6 +22,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
 import ListIcon from '@material-ui/icons/List';
+import AddIcon from '@material-ui/icons/Add';
 
 const drawerWidth = 240;
 
@@ -162,6 +163,12 @@ export default function PersistentDrawerLeft({ prueba }) {
                 <ListIcon />
               </ListItemIcon>
               <ListItemText primary='Todo' />
+            </ListItem>
+            <ListItem button key='Add Task' onClick={() => history.push("/newTask")}>
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText primary='Add Task' />
             </ListItem>
             <ListItem button key='Logout' onClick={out}>
               <ListItemIcon>
